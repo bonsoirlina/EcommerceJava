@@ -6,6 +6,7 @@ import com.example.demo.model.User;
 import com.example.demo.repository.CartRepository;
 import com.example.demo.repository.ProductRepository;
 import com.example.demo.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +20,7 @@ public class ShopService {
     private final ProductRepository productRepository;
 
     public ShopService(@Qualifier("userRepositoryWithInitData") UserRepository userRepository,
-                       @Qualifier("cartRepositoryWithInitData") CartRepository cartRepository,
+                       @Autowired CartRepository cartRepository,
                        @Qualifier("productRepositoryWithInitData") ProductRepository productRepository) {
         this.userRepository = userRepository;
         this.cartRepository = cartRepository;

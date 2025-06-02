@@ -32,11 +32,6 @@ public class DataConfig {
         return productRepository;
     }
 
-    @Bean(name = "cartRepositoryWithInitData")
-    public CartRepository cartRepository() {
-        return cartRepository;
-    }
-
     @Bean(name = "userRepositoryWithInitData")
     public UserRepository userRepository() {
         User user = user();
