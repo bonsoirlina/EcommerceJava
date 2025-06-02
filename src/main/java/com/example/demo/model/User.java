@@ -17,11 +17,11 @@ import java.util.List;
 public class User {
 
     @Id
+    @Column(name = "uuid")
+    private String uuid;
+
     @Column(name = "name")
     private String name;
-
-    @Column(name = "email")
-    private String email;
 
     @OneToMany(mappedBy = "user")
     private List<Cart> carts;

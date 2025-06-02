@@ -24,6 +24,9 @@ public class Product {
     @Column(name = "price")
     private double price;
 
+    @Column(name = "available")
+    private boolean available;
+
     @ManyToOne
     private Cart cart;
 }

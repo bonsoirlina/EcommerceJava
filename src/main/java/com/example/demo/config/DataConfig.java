@@ -46,9 +46,9 @@ public class DataConfig {
 
     public List<Product> productList() {
         return List.of(
-                new Product("61082a4a-ec0a-4365-ab37-960bc6c267ba", "PS5", 499.99, null),
-                new Product("fd30b73b-0af0-4b89-9d65-0a6eff61331a", "XBOX", 599.99, null),
-                new Product("5c462607-d286-44a5-97e6-86afb1f545b1", "SWITCH 2", 499.99, null)
+                new Product("61082a4a-ec0a-4365-ab37-960bc6c267ba", "PS5", 499.99, true, null),
+                new Product("fd30b73b-0af0-4b89-9d65-0a6eff61331a", "XBOX", 599.99, true, null),
+                new Product("5c462607-d286-44a5-97e6-86afb1f545b1", "SWITCH 2", 499.99, false, null)
         );
     }
 
