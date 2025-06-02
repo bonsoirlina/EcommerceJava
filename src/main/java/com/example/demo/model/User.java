@@ -26,11 +26,10 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<Cart> carts;
 
-    public void addToCart(Cart cart, Product product) {
-        Cart findedCart = carts.stream()
-                .filter(cart1 -> cart1.getId().equals(cart.getId()))
-                .findFirst()
-                .orElseThrow(() -> new RuntimeException("Caddie non trouvable"));
-        findedCart.addProduct(product);
+    public void addToCart(Product product) {
+        if (carts.isEmpty()) {
+            carts.add(new Cart("04d37b37-7b08-45cf-8224-dec9f58029eb", List.of(product), null));
+        }
+        carts.get(0).addProduct(product);
     }
 }

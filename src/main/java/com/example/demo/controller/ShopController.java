@@ -31,4 +31,16 @@ public class ShopController {
             return ResponseEntity.status(500).build();
         }
     }
+
+    @GetMapping("/cart/{uuidUser}/{uuidProduct}")
+    public ResponseEntity<Void> showCart(@PathVariable String uuidUser, @PathVariable String uuidProduct) {
+        try {
+            shopService.addProductToCart(uuidUser, uuidProduct);
+            return ResponseEntity.ok().build();
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(404).build();
+        } catch (Exception e) {
+            return ResponseEntity.status(500).build();
+        }
+    }
 }
